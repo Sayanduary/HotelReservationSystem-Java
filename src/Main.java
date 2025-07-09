@@ -123,7 +123,7 @@ class Main {
                         System.out.println("Time (UTC): " + getCurrentDateTimeUTC());
                     }
                 } else {
-                    System.out.println("❌ Reservation failed.");
+                    System.out.println(" Reservation failed.");
                 }
             }
         } catch (SQLException e) {
