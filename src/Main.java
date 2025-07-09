@@ -14,7 +14,7 @@ class Main {
         displayAuthenticationInfo();
 
         try (Connection connection = DatabaseUtil.getConnection()) {
-            System.out.println("✅ Database Connection Successful");
+            System.out.println(" Database Connection Successful");
 
             Scanner scanner = new Scanner(System.in);
 
