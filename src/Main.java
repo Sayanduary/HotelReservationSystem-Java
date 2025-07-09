@@ -132,7 +132,7 @@ class Main {
     }
 
     private static void viewReservations(Connection connection) {
-        System.out.println("\n📋 === VIEW RESERVATIONS ===");
+        System.out.println("\n === VIEW RESERVATIONS ===");
         System.out.println("Requested by: " + CURRENT_USER + " | Time: " + getCurrentDateTimeUTC());
 
         try {
@@ -170,12 +170,12 @@ class Main {
                 }
             }
         } catch (SQLException e) {
-            System.err.println("❌ Error viewing reservations: " + e.getMessage());
+            System.err.println(" Error viewing reservations: " + e.getMessage());
         }
     }
 
     private static void getRoomNumber(Connection connection, Scanner scanner) {
-        System.out.println("\n🔍 === GET ROOM NUMBER ===");
+        System.out.println("\n === GET ROOM NUMBER === ");
         System.out.println("Operator: " + CURRENT_USER + " | Time: " + getCurrentDateTimeUTC());
 
         try {
@@ -198,17 +198,17 @@ class Main {
                         System.out.println("✅ Room number for Reservation ID " + reservationId +
                                 " and Guest '" + guestName + "' is: " + roomNumber);
                     } else {
-                        System.out.println("❌ Reservation not found for the given ID and guest name.");
+                        System.out.println("Reservation not found for the given ID and guest name.");
                     }
                 }
             }
         } catch (SQLException e) {
-            System.err.println("❌ Error retrieving room number: " + e.getMessage());
+            System.err.println(" Error retrieving room number: " + e.getMessage());
         }
     }
 
     private static void updateReservation(Connection connection, Scanner scanner) {
-        System.out.println("\n✏️ === UPDATE RESERVATION ===");
+        System.out.println("\n === UPDATE RESERVATION ===");
         System.out.println("Operator: " + CURRENT_USER + " | Time: " + getCurrentDateTimeUTC());
 
         try {
@@ -217,7 +217,7 @@ class Main {
             scanner.nextLine(); // consume newline
 
             if (!reservationExists(connection, reservationId)) {
-                System.out.println("❌ Reservation not found for the given ID.");
+                System.out.println(" Reservation not found for the given ID.");
                 return;
             }
 
@@ -245,11 +245,11 @@ class Main {
                     System.out.println("✅ Reservation updated successfully!");
                     System.out.println("Updated by: " + CURRENT_USER + " at " + getCurrentDateTimeUTC() + " (UTC)");
                 } else {
-                    System.out.println("❌ Reservation update failed.");
+                    System.out.println(" Reservation update failed.");
                 }
             }
         } catch (SQLException e) {
-            System.err.println("❌ Error updating reservation: " + e.getMessage());
+            System.err.println(" Error updating reservation: " + e.getMessage());
         }
     }
 
@@ -262,7 +262,7 @@ class Main {
             int reservationId = scanner.nextInt();
 
             if (!reservationExists(connection, reservationId)) {
-                System.out.println("❌ Reservation not found for the given ID.");
+                System.out.println(" Reservation not found for the given ID.");
                 return;
             }
 
@@ -277,11 +277,11 @@ class Main {
                     System.out.println("✅ Reservation deleted successfully!");
                     System.out.println("Deleted by: " + CURRENT_USER + " at " + getCurrentDateTimeUTC() + " (UTC)");
                 } else {
-                    System.out.println("❌ Reservation deletion failed.");
+                    System.out.println(" Reservation deletion failed.");
                 }
             }
         } catch (SQLException e) {
-            System.err.println("❌ Error deleting reservation: " + e.getMessage());
+            System.err.println(" Error deleting reservation: " + e.getMessage());
         }
     }
 
